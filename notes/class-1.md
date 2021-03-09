@@ -403,3 +403,104 @@ $$
 
 > The spectrum is Lorentz-invariant **only** if the number of spacetime dimensions is $D = 26$ . The classical theory is Lorentz-invariant for any $D$ but there is an anomaly, the symmetry is no preserved by the quantization except when $D = 26$.
 
+### Closed and unoriented strings
+
+Again, we impose the gauge condition
+$$
+X^+ = \tau, \quad \part_\sigma \gamma_{\sigma\sigma} = 0, \quad \gamma = -1~.
+$$
+In the open string, these determined the gauge completely. In the closed string there is still some extra coordinate freedom,
+$$
+\sigma' = \sigma + s(\tau)~ {\rm mod}~\ell~,
+$$
+because the point $\sigma = 0$ can be chosen anywhere along the string. Most of this remaining freedom can be fixed by the additional gauge condition
+$$
+\gamma_{\tau\sigma}(\tau, 0) = 0~.
+$$
+That is, the line $\sigma = 0$ is orthogonal to the lines of constant $\tau$ . This determines the line $\sigma = 0$ except for an overall $\sigma$-translation. Thus, the four gauge conditions fix all of the gauge freedom except for $\tau$-independent translations of $\sigma$
+$$
+\sigma' = \sigma + s ~{\rm mod}~\ell~.
+$$
+The Lagrangian, canonical momenta, Hamiltonian, and equation of motion are as in the open string. The general periodic solution to the equation of motion is
+$$
+X^i(\tau, \sigma) = x^i + \frac{p^i}{p^+} \tau + i \sqrt{\alpha'/2} \sum_{n\in\mathbb{Z}_*}\left\{\frac{\alpha^i_n}{n}\exp\left[-\frac{2\pi i n(\sigma + c\tau)}{\ell}\right]+ \frac{\tilde \alpha_n^i}{n}\exp\left[\frac{2\pi i n(\sigma - c\tau)}{\ell}\right]\right\}~.
+$$
+
+> In the closed string there are two independent sets of oscillators, $\alpha^i_n$ and $\tilde \alpha^i_n$ corresponding to left-moving and right-moving waves along the string. In the open string case, the boundary condition at the endpoints tied these together. The independent degrees of freedom are
+> $$
+> \alpha^i_n, \tilde \alpha^i_n, x^i, p^i, x^-, p^+,
+> $$
+> with canonical commutators
+> $$
+> \begin{align}
+> [x^-,p^+] &= -i,\\
+> [x^i,p^j] &= i \delta^{ij},\\
+> [\alpha^i_m, \alpha^j_n] &= m\delta^{ij} \delta_{m,-n},\\
+> [\tilde \alpha^i_m, \tilde \alpha^j_n] &= m\delta^{ij}\delta_{m,-n}.
+> \end{align}
+> $$
+
+Starting from the state $|0,0;k\rang$, which has center-of-mass momentum $k^\mu$ and is annihilated by $\alpha^i_m$s and $\tilde \alpha^i_m$s for $m>0$, the general state is
+$$
+|N,\tilde N; k\rang = \prod_{i=2}^{D-1}\prod_{n=1}^\infty \frac{(\alpha^i_{-n})^{N_{in}}(\tilde \alpha^i_{-n})^{\tilde N_{in}}}{\sqrt{n^{N_{in}}N_{in}! n^{\tilde N_{in} } \tilde N_{in}!}} |0,0;k\rang~.
+$$
+The mass spectrum is 
+$$
+m^2 = \frac{2}{\alpha'} (N + \tilde N + A + \tilde A)~.
+$$
+Summing the zero-point energy gives
+$$
+A = \tilde A = \frac{2-D}{24}~.
+$$
+
+> There is one further restiction on the state due to the remaining gauge freedom, the $\sigma$-translations. The physical spectrum is obtained by restricting to gauge-invariant states. The operator that generates the $\sigma$-translations is
+> $$
+> P = - \int^\ell_0 d\sigma \,\Pi_i \part_\sigma X^i = -\frac{2\pi}{\ell} (N - \tilde N)~.
+> $$
+> States must therefore satisfy
+> $$
+> N = \tilde N~.
+> $$
+
+The lightest closed string state is
+$$
+|0,0;k\rang,\quad m^2 = \frac{2-D}{6\alpha'}~,
+$$
+which is again a tachyon. The first excited states are
+$$
+\alpha^i_{-1} \tilde {\alpha}^j_{-1} |0,0;k\rang,\quad m^2 = \frac{26 - D}{6 \alpha'}~.
+$$
+As with the open string, this level should be massless. Thus
+$$
+A = \tilde A = -1, \quad D = 26~.
+$$
+And  this state transfomr as a 2-tensor under $SO(D-2)$. This is a reducible representation, it decomposes into
+
+- a symmetric traceless tensor (graviton)
+- an antisymmetric tensor (axion)
+- a scalar (dilaton)
+
+> ### The unoriented string theory
+>
+> The coordinate transformation
+> $$
+> \sigma' = \ell - \sigma, \quad \tau' = \tau~,
+> $$
+> changes the orientation of the world-sheet. We denote it by world-sheet parity operator $\Omega$. From the mode expansions we can see that
+> $$
+> \Omega \alpha^i_n\Omega^{-1} = (-1)^n \alpha^i_n
+> $$
+> in the open string and 
+> $$
+> \begin{align}
+> \Omega \alpha^i_n \Omega^{-1} &= \tilde \alpha^i_n~,\\
+> \Omega \tilde \alpha^i_n \Omega^{-1} & = \alpha^i_n
+> \end{align}
+> $$
+> in the closed string. We define the phase of $\Omega$ by fixing $\Omega = 1$ for the ground state $|0;k\rang$ and $|0,0;k\rang$. Then
+> $$
+> \Omega |N;k\rang = (-1)^N |N;k\rang,\quad \Omega|N,\tilde N; k\rang = |\tilde N, N;k\rang~.
+> $$
+> Consistent states are those unoriented states which has $\Omega = +1$. Thus, photon is absent in unoriented theory. Graviton and dilaton are present while axion is not. Both the open and closed string tachyons survive.
+>
+> > If we have Chan-Paton degrees of freedom at the endpoints. The massless oriented open strings will then be $U(n)$ gauge bosons, and the massless unoriented open strings will be $SO(n)$ or $Sp(n)$ gauge bosons.
