@@ -2,9 +2,9 @@
 
 The mode expansion for bosonic closed string is
 $$
-X^\mu = x^\mu + \alpha' p^\mu \tau + i\sqrt{\alpha'/2} \sum_{n\neq 0}\{\frac1n \alpha^\mu_n \exp\left[-in(\tau-\sigma)\right]+\frac1n\tilde \alpha^\mu_n\exp[-in(\tau + \sigma)]\}~.
+X^\mu = x^\mu + \alpha' p^\mu \tau + i\sqrt{\alpha'/2} \sum_{n\neq 0}\left\{\frac1n \alpha^\mu_n \exp\left[-in(\tau-\sigma)\right]+\frac1n\tilde \alpha^\mu_n\exp[-in(\tau + \sigma)]\right\}~.
 $$
-Then
+Its derivative with respect to $\tau$ is
 $$
 \part_\tau X^\mu = \alpha' p^\mu +\sqrt{\alpha'/2} \sum_{n\neq 0}\{\alpha^\mu_n \exp\left[-in(\tau-\sigma)\right]+\tilde \alpha^\mu_n\exp[-in(\tau + \sigma)]\}~.
 $$
@@ -20,6 +20,9 @@ $$
 [x^\mu, p_\nu] = \frac{1}{2\pi} \int_0^{2\pi}d\sigma \int_0^{2\pi} d\sigma' \,[X^\mu(\sigma), \Pi_\nu(\sigma')] = \frac{1}{2\pi} \int_0^{2\pi}d\sigma \int_0^{2\pi} d\sigma' \, i\delta(\sigma-\sigma') \delta^\mu_{~\nu} = i \delta^\mu_{~\nu}~.
 \end{align}
 $$
+
+---
+
 Now we would like to solve $\alpha_m^\mu$ and $\tilde \alpha^\mu_m$ ($m\neq0$) in terms of $X^\mu$ and $\partial_\tau X^\mu$ . Note that
 $$
 \begin{align}
@@ -43,7 +46,7 @@ $$
 &=\alpha'/2\int_0^{2\pi} d\sigma e^{i(m+n)(\tau-\sigma)} \eta^{\mu \nu} \frac{1}{2\pi \alpha'} (n-m) = \frac12 e^{i(m+n)\tau}\eta^{\mu \nu} (n-m)\delta_{m,-n} = n\eta^{\mu \nu} \delta_{m,-n}~.
 \end{align}
 $$
-Similarly,
+In a similar fashion,
 $$
 [\tilde \alpha^\mu_n, \tilde\alpha_m^\mu] = n \eta^{\mu \nu} \delta_{m,-n}~.
 $$
@@ -122,4 +125,52 @@ $$
 x^\mu = c^\mu, \quad p^\mu = 0, \quad \alpha_n = -\tilde \alpha_n~.
 $$
 
+---
 
+Now
+$$
+\begin{align}
+X^\mu(\sigma^+) &= \frac12x^\mu + \alpha' p^\mu \sigma^+ + i \sqrt{\alpha'/2} \sum_{n\neq 0}\frac1n \alpha_n^\mu e^{-in\sigma^+}~.\\
+\part_+ X^\mu &= \alpha' p^\mu + \sqrt{\alpha'/2}\sum_{n\neq0}\alpha^\mu_n e^{-in\sigma^+} = \sqrt{\alpha'/2}\sum_n \alpha_n^\mu e^{-in\sigma^+},\quad {\rm with}~\alpha^\mu_0 = \sqrt{2\alpha'}p^\mu~.
+\end{align}
+$$
+From  the equation of motion
+$$
+\part_+ \part_-X^\mu = 0~,
+$$
+we have
+$$
+2\part_+ X^- \part_+ X^+ = \sum_{i=1}^{D-2} \part_+ X^i \part_+ X^i~.
+$$
+Also,
+$$
+\part_+ X^+ =\alpha'p^+,\quad \part_+ X^-=\sqrt{\alpha'/2}\sum_{n} \alpha_n^- e^{-in\sigma^+}, \quad \part_+ X^i = \sqrt{\alpha'/2}\sum_{n} \alpha_n^i e^{-in\sigma^+}~.
+$$
+Therefore,
+$$
+2\alpha' p^+ \sum_k \alpha_k^- e^{-ik\sigma^+} = \sqrt{\alpha'/2}\sum_{m,s}\sum_{i=1}^{D-2}\alpha_s^i\alpha_m^i e^{-i(m+s)\sigma^+}~.
+$$
+Multiply this equation by $e^{in\sigma^+}$ and perform integral over $0\le\sigma\le\ell$, yields Kronecker delta, and hence
+$$
+2\alpha' p^+ \alpha_n^- = \sqrt{\alpha'/2} \sum_{i=1}^{D-2}\sum_m \alpha_{n-m}^i\alpha_m^i~.
+$$
+Therefore,
+$$
+2 \alpha_n^- = \frac{1}{\sqrt{2\alpha'}} \frac{1}{p^+}\sum_{m=-\infty}^{\infty}\sum_{i = 1}^{D-2}\alpha^i_{n-m} \alpha^i_m~.
+$$
+
+---
+
+For $n=0$, 
+$$
+2\sqrt{2\alpha'}p^- = 2\alpha^-_n = \frac{1}{\sqrt{2\alpha'}} \frac{1}{p^+}\sum_{m=-\infty}^{\infty}\sum_{i = 1}^{D-2}\alpha^i_{-m} \alpha^i_m~.
+$$
+Therefore,
+$$
+M^2 = 2p^+p^- - \sum_{i=1}^{D-2} p^ip^i = \frac{1}{2\alpha'}\sum_m\sum_{i=1}^{D-2} \alpha^i_{-m} \alpha^i_m - \sum_{i=1}^{D-2}p^ip^i.
+$$
+The first summation at $m=0$ cancels the second summation and we are left with
+$$
+M^2 = \frac{1}{2\alpha'} \left(\sum_{m>0} \sum_{i=1}^{D-2}\alpha^i_{-m}\alpha^i_m + \sum_{m<0}\sum_{i=1}^{D-2}\alpha^i_{-m}\alpha^i_m \right) = \frac{1}{\alpha'}\sum_{m>0}\sum_{i=1}^{D-2} \alpha^i_{-m}\alpha^i_m + \frac{D-2}{2\alpha'}\sum_{m>0}m
+$$
+For closed string, there are two sets of modes. And in the mode expansion of $X^\mu$, the center-of-mass momentum term differs from the closed string by factor of $2$. Thus there is a difference of factor $4$ in mass spectrum.
