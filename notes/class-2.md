@@ -269,4 +269,130 @@ $$
 ds'^2 = dz' d\bar z' = \frac{\part z'}{\part z} \frac{\part \bar z'}{\part \bar z}dz d\bar z~.
 $$
 
+### Conformal invariance and the OPE
 
+Consider the OPE of $T$ with the general operator $\mathscr A$. The OPE would be a Laurent expansion. All the singular terms are determined by the conformal transformation of $\mathscr A$.
+$$
+T(z) \mathscr A(0,0) \sim \sum_{n=0}^\infty \frac{1}{z^{n+1}} \mathscr A^{(n)}(0,0)
+$$
+The operator coefficients $\mathscr A^{(n)}$ remain to be determined.
+
+It is convenient to take a basis of local operators that are eigenstates under rigid transformation
+$$
+\mathscr A'(z', \bar z') = \zeta^{-h} \bar \zeta^{-\bar h} \mathscr A(z,\bar z).
+$$
+The $(h,\bar h)$ are known as the **weights** of $\mathscr A$. The sum $h + \bar h$ is the dimension of $\mathscr A$, determine its behavior under scaling, while $h-\bar h$ is the spin, determining its behavior under rotations. The derivative $\part$ increases $h$ by one, and the derivative $\bar \part$ increases $\bar h$ by one.
+
+An important special case is a **tensor operator** or **primary field** $\mathscr O$, on which a general conformal transformation acts as
+$$
+\mathscr O'(z', \bar z') = (\part z')^{-h}(\bar \part \bar z')^{-\bar h} \mathscr O(z,\bar z)~.
+$$
+The OPE  is 
+$$
+T(z) \mathscr O(0,0) = \frac{h}{z^2} \mathscr O(0,0) + \frac{1}{z} \part \mathscr O(0,0)+...
+$$
+
+---
+
+Take the example of the free $X^\mu$ CFT, the weights of some typical operators are
+$$
+X^\mu \quad (0,0);\qquad \part X^\mu\quad (1,0);\qquad \bar \part X^\mu\quad (0,1);\qquad :e^{ikX}:\quad (\alpha'k^2/4, \alpha'k^2/4)
+$$
+For any pair of operators, applying rigid translations, scale transformations, and rotations to both sides of the OPE determines the $z$-dependence of the coefficient functions completely,
+$$
+\mathscr A_i(z_1, \bar z_1) \mathscr A_j(z_2,\bar z_2) = \sum_k z_{12}^{h_k-h_i-h_j}\bar z_{12}^{\bar h_k - \bar h_i - \bar h_j} c^k_{~ij} \mathscr A_k(z_2, \bar z_2)
+$$
+
+### Conformal properties of the energy-momentum tensor
+
+The OPE of the energy-momentum tensor with itself was obtained by
+$$
+T(z) T(0) \sim \frac{D}{2 z^4} + \frac{2}{z^2} T(0) + \frac 1 z \part T(0)
+$$
+This OPE combined with the Ward identity, gives the transformation law
+$$
+\epsilon^{-1} \delta T(z) = -\frac{D}{12}\part^3 v(z)- 2\part v(z) T(z) - v(z) \part T(z)
+$$
+In a general CFT, $T(z)$ transforms as
+$$
+\epsilon^{-1} \delta T(z) = -\frac{c}{12}\part^3 v(z)- 2\part v(z) T(z) - v(z) \part T(z)~,
+$$
+with $c$ a constant known as the **central charge**. The central charge of a free scalar is $1$, for $D$ free scalars it is $D$.
+
+The finite form of the transformation law is
+$$
+(\part z')^2 T'(z') = T(z) - \frac{c}{12}\{z',z\}~,
+$$
+where $\{f,z\}$ denoted the **Schwarzian derivative**
+$$
+\{f,z\} = \frac{2\part^3_z f \part_z f- 3\part_z^2 f\part^2_z f}{2\part_z f \part_zf}
+$$
+
+## Free CFTs
+
+We will introduce three families of free-field CFTs, the linear dilaton, $bc$, and $\beta \gamma$ theories.
+
+### Linear dilaton CFT
+
+The energy-momentum tensor is given by
+$$
+T(z) = -\frac{1}{\alpha'} :\part X^\mu \part X_\mu: + V_\mu \part^2 X^\mu~,\\
+\bar T(\bar z)= -\frac{1}{\alpha'} :\bar\part X^\mu \bar\part X_\mu: + V_\mu \bar\part^2 X^\mu~,
+$$
+where $V_\mu$ is some fixed $D$-vector. Working out the $TT$ OPE, one finds that it is of the form
+$$
+T(z)T(0) \sim \frac{c}{2z^4} + \frac{2}{z^2} T(0) + \frac 1z \part T(0)~,
+$$
+but with $c = D + 6\alpha' V^\mu V_\mu$.
+
+The $T X^\mu$ OPE gives
+$$
+T(z) X^\mu(0) \sim \frac{\alpha' V^\mu}{2 z^2} + \frac{\part X^\mu}{z}
+$$
+and the Ward identity gives the transformation law of $X^\mu$
+$$
+\delta X^\mu = - \epsilon v \part X^\mu - \epsilon v^* \bar \part X^\mu - \frac{\epsilon}{2}\alpha' V^\mu [\part v + (\part v)^*]~.
+$$
+Different values of $V^\mu$ are to be regarded as different CFTs. The vector $V^\mu$ picks out a direction in spacetime. This CFT is therefore not Lorentz-invariant and not of immediate interest to us.
+
+### $bc$ CFT
+
+The second family of CFTs has **anticommuting** fields $b$ and $c$ with action
+$$
+S = \frac{1}{2\pi} \int d^2z b \bar \part c~.
+$$
+This is conformally invariant for $b$ and $c$ transforming as tensors of weights $(h_b, 0)$ and $(h_c,0)$ such that
+$$
+h_b = \lambda,\quad h_c = 1-\lambda~,
+$$
+for any given constant $\lambda$. This is secretly the same as the linear dilaton family as we will see later.
+
+The operator equations of motion are
+$$
+\bar \part c(z) = \bar \part b(z) = 0,\quad \bar \part b(z) c(0) = 2\pi \delta^2(z, \bar z)~.
+$$
+The $bb$ and $cc$ OPE satisfy the equation of motion withou source. The normal ordered $bc$ product is
+$$
+:b(z_1) c(z_2): = b(z_1) c(z_2) - \frac{1}{z_{12}}~.
+$$
+This is because
+$$
+\bar \part \frac 1 z= \part\frac{1}{\bar z} = 2\pi \delta^2(z,\bar z).
+$$
+The operator products are
+$$
+b(z_1) c(z_2) \sim \frac{1}{z_{12}},\quad c(z_1) b(z_2) \sim \frac{1}{z_{12}}~.
+$$
+Noether's theorem gives the energy-momentum tensor
+$$
+T(z) = :(\part b)c: - \lambda \part(:bc:),\quad \overline T(\bar z)  = 0.
+$$
+The $TT$ OPE is
+$$
+T(z)T(0) \sim \frac{c}{2z^4} + \frac{2}{z^2} T(0) + \frac 1z \part T(0)~,
+$$
+with $c = -3(2\lambda-1)^2 + 1$. Moreover, $\bar c = 0$. This is a purely holomorphic CFT, and is an example where $c \neq \bar c$. There is of course a corresponding antiholomorphic theory
+$$
+S = \frac{1}{2\pi} \int d^z \bar b \part \bar c~.
+$$
+The $bc$ theory has a **ghost number** symmetry $\delta b = -i\epsilon b, \delta c = i \epsilon c$.
