@@ -82,7 +82,7 @@ $$
 $$
 Therefore
 $$
-a = \left (\frac{z_2 - z_3}{z_2 - z_1} \frac{1}{z_1-z_3}\right)^{\frac12},\quad c=\left (\frac{z_2 - z_1}{z_2 - z_3} \frac{1}{z_1-z_3}\right)^{\frac12}, \quad b = -z_1\left (\frac{z_2 - z_3}{z_2 - z_1} \frac{1}{z_1-z_3}\right)^{\frac12}, \quad d = -z_3\left (\frac{z_2 - z_1}{z_2 - z_3} \frac{1}{z_1-z_3}\right)^{\frac12}
+a = \pm \left (\frac{z_2 - z_3}{z_2 - z_1} \frac{1}{z_1-z_3}\right)^{\frac12},\quad c=\pm\left (\frac{z_2 - z_1}{z_2 - z_3} \frac{1}{z_1-z_3}\right)^{\frac12},\\ \quad b = \mp z_1\left (\frac{z_2 - z_3}{z_2 - z_1} \frac{1}{z_1-z_3}\right)^{\frac12}, \quad d = \mp z_3\left (\frac{z_2 - z_1}{z_2 - z_3} \frac{1}{z_1-z_3}\right)^{\frac12}
 $$
 
 ---
