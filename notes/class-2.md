@@ -395,4 +395,177 @@ with $c = -3(2\lambda-1)^2 + 1$. Moreover, $\bar c = 0$. This is a purely holomo
 $$
 S = \frac{1}{2\pi} \int d^z \bar b \part \bar c~.
 $$
-The $bc$ theory has a **ghost number** symmetry $\delta b = -i\epsilon b, \delta c = i \epsilon c$.
+The $bc$ theory has a **ghost number** symmetry $\delta b = -i\epsilon b, \delta c = i \epsilon c$. The corresponding Noether current is
+$$
+j = -:bc:~.
+$$
+The current is not a tensor,
+$$
+T(z) j(0) \sim \frac{1-2\lambda}{z^3} + \frac{1}{z^2} j(0) + \frac 1z \part j(0)
+$$
+This implies the transformation law
+$$
+\epsilon^{-1} \delta j = -v \part j - j \part v + \frac{2\lambda - 1}{2} \part^2 v~.
+$$
+
+The one case where $b$ and $c$ have equal weight is $h_b= h_c = \frac12$, for which the central charge $c=1$. Here we oftern use the notation $b \to \psi$ and $c \to \bar \psi$. For this case the $bc$ CFT can be split in two in a conformally invariant way
+$$
+\psi = \frac{1}{\sqrt 2} (\psi_1 + i\psi _2), \quad \bar \psi = \frac{1}{\sqrt{2}}(\psi_1 - i\psi_2)~,\\
+S = \frac{1}{4\pi} \int d^2 z (\psi_1 \bar \part \psi_1 + \psi_2 \bar \part \psi_2)~,\quad T = -\frac12 \psi_1 \part \psi_1 - \frac12 \psi_2 \part \psi_2~.
+$$
+Each $\psi$ theory has the central charge $\frac12$.
+
+The $bc$ theory for $\lambda = 2$, weights $(h_b, h_c) = (2, -1)$ will arise as the Faddeev-Popov ghosts from gauge fixing the Polyakov string.
+
+### $\beta \gamma$ CFT
+
+The third family of CFTs is much like the $bc$ theory but with commuting fields, $\beta$ is an $(h_\beta, 0)$ tensor and $\gamma$ an $(h_\gamma, 0)$ tensor, where
+$$
+h_\beta = \lambda, \quad h_\gamma = 1- \lambda~.
+$$
+The action is 
+$$
+S = \frac{1}{2\pi} \int d^2 z \beta \bar \part \gamma~.
+$$
+These fields are again holomorphic by the equations of motion,
+$$
+\bar \part \gamma(z) = \bar \part \beta(z) = 0~.
+$$
+The operator products are given by
+$$
+\beta(z_1) \gamma(z_2) \sim -\frac{1}{z_{12}}, \quad \gamma(z_1) \beta(z_2) \sim \frac{1}{z_{12}}~.
+$$
+The energy momentum tensor is 
+$$
+T = :(\part \beta) \gamma: - \lambda\part(:\beta \gamma:)~.
+$$
+The central charge is simply reversed in sign,
+$$
+c = 3(2\lambda - 1)^2 - 1,\quad \bar c = 0~.
+$$
+The $\beta \gamma$ theory for $\lambda = \frac{3}{2}$, weights $(h_\beta , h_\gamma) = (\frac 32, -\frac12)$ will arise as the Faddeev-Popov ghosts form gauge-fixing the superstring.
+
+## The Virasoro algebra
+
+The spatial coordinate will be periodic, as in the closed string, or bounded, as in the open string.
+
+For the periodic case let
+$$
+\sigma^1 = \sigma^1 + 2\pi~.
+$$
+Let the Euclidean time coodinate run
+$$
+-\infty < \sigma^2 < \infty~.
+$$
+The two dimensions form an infinite cylinder. It is useful to form a complex coordinate, and there are two natural choices. The first is
+$$
+w = \sigma^1 + i \sigma^2
+$$
+so that $w \sim w + 2\pi$. The second is
+$$
+z = \exp(-i w)= \exp(-i\sigma^1 + \sigma^2)~.
+$$
+Now in this coordinate, time runs radially, the origin being the infinite past. These coodinates are related by a conformal transformation. The $w$ coordinates is natural for the canonical interpretation of the theory, but the $z$ coordinate is also quite useful and most expressions are written in this frame.
+
+For a holomorphic or antiholomorphic operator, we can make a Laurent expansion,
+$$
+T(z) = \sum_{m = -\infty}^\infty \frac{L_m}{z^{m+2}}, \quad \overline T(\bar z) = \sum_{m = -\infty}^\infty \frac{\bar L_m}{\bar z^{m+2}}~.
+$$
+The Laurent coefficients, known as the **Virasoro generators** are given by the contour integrals
+$$
+L_m = \int_C \frac{dz}{2\pi i z} z^{m+2} T(z)~,
+$$
+where $C$ is any contour encircling the origin counterclockwise.
+
+---
+
+In the $w$ coordinate, recall that
+$$
+(\part_z w)^2 T(w) = T(z) - \frac{c}{12} \{w, z\}
+$$
+we can get
+$$
+T(w) = - \sum_{m = -\infty}^\infty \exp(i m \sigma^1 - m \sigma^2) T_m,\\
+\overline T(\bar w) = - \sum_{m = -\infty}^\infty \exp(-i m \sigma^1 - m \sigma^2) \overline T_m~,
+$$
+where
+$$
+T_m = L_m - \delta_{m,0} \frac{c}{24}, \quad \overline T_m = \bar L_m - \delta_{m,0} \frac{\bar c}{24}~.
+$$
+The Hamiltonian $H$ of time translation in the $w = \sigma^1 + i \sigma^2$ frame is
+$$
+H = \int_0 ^{2\pi} \frac{d \sigma^1}{2\pi} T_{22} = L_0 + \bar L_0 - \frac{c + \bar c}{24}~.
+$$
+Since $T_{22} = - T_{ww}-T_{\bar w \bar w}$.
+
+---
+
+It is an important fact that the OPE of currents determines the algebra of the correpsonding charges. Consider general charges $Q_i$, $i = 1,2$, given as contour integrals of holomorphic currents
+$$
+Q_i\{C\} = \int_C \frac{dz}{2\pi i} j_i~.
+$$
+Consider the combination
+$$
+Q_1 \{C_1\} Q_2\{C_2\} - Q_1\{C_3\} Q_2\{C_2\}~,
+$$
+where the contour $C_3$ is inside $C_2$ while $C_2$ is inside of $C_1$. What determines the operator ordering is the time ordering. Here it's $t_1 > t_2 > t_3$. The path integral with the combination above thus corresponds to a matrix element of
+$$
+\hat Q_1 \hat Q_2 - \hat Q_2 \hat Q_1 \equiv [\hat Q_1, \hat Q_2]~.
+$$
+Now for a given point $z_2$ on the contour $C_2$, we can deform the difference of the $C_1$ and $C_3$ contours so the commutator is given by the residue of the OPE,
+$$
+[Q_1, Q_2]\{C_2\} = \int_{C_2}\frac{dz_2}{2\pi i} {\rm Res}_{z_1 \to z_2} j_1(z_1)j_2(z_2)
+$$
+This contour argument allows us to pass back and forth between OPEs and commutation relations. _For conserved currents, knowing the singluar terms in the OPE is equivalent to knowing the commutator algebra of the corresponding charges_. We can also substitute the conserved charge $Q_2\{C_2\}$ by any operator
+$$
+[Q, \mathscr A(z_2, \bar z_2)] = {\rm Res}_{z_1 \to z_2} j(z_1) \mathscr A(z_2, \bar z_2) = \frac{1}{i \epsilon} \delta \mathscr A(z_2, \bar z_2)~.
+$$
+Apply this to the Virasoro generators gives the **Virasoro algebra**
+$$
+[L_m, L_n] = (m-n)L_{m+n} + \frac{c}{12}(m^3 - m) \delta_{m,-n}~.
+$$
+Any CFT thus has an infinite set of conserved charges, the Virasoro generators, which act in the Hilbert space and satisfies the algebra above. Generally we work with eigenstates of $L_0$ and $\bar L_0$. They satisfy
+$$
+[L_0 , L_n] = -n L_n~.
+$$
+If $|\psi\rang$ is an eigenstate of $L_0$ with eigenvalue $h$, then
+$$
+L_0 L_n |\psi\rang = L_n (L_0 - n) |\psi\rang = (h-n)L_n |\psi\rang~.
+$$
+Therefore, $L_n |\psi\rang$ is an eigenstate with eigenvalue $h-n$. The generators with $n < 0$ raise the $L_0$ eigenvalue and those with $n > 0$ lower it.
+
+---
+
+The three genertors $L_0$ and $L_{\pm 1}$ form a closed algebra without central charge,
+$$
+[L_0, L_1] = -L_1, \quad [L_0, L_{-1}] = L_{-1}, \quad [L_1, L_1] = 2L_0~.
+$$
+This is the algebra $SL(2,\mathbb R)$ which differs from $SU(2)$ by signs. For the Laurent coefficients of a holomorphic tensor field $\mathscr O$ of weight $(h, 0)$,
+$$
+\mathscr O(z) = \sum_{-\infty}^{\infty} \frac{\mathscr O_m}{z^{m+h}}~,
+$$
+from which one can find that
+$$
+[L_m, \mathscr O_n] = [(h-1)m -n] \mathscr O_{m+n}~.
+$$
+Again modes with $n > 0$ reduce $L_0$ while modes with $n < 0$ increase it.
+
+---
+
+In the open string, let
+$$
+0 \le {\rm Re} \, w\le \pi, \quad \leftrightarrow \quad {\rm Im} z \ge 0,
+$$
+where $z = -\exp(-iw)$. At a boundary, the energy-momentum tensor satisfies
+$$
+T_{ab} n^a t^b = 0~,
+$$
+where  $n^a$ and $t^b$ are again normal and tangent vectors. To see this, consider a coordinate system in which the boundary is straight. The presence of the boundary breaks translation invariance in the normal direction but not the tanentail, so that the current $T_{ab} t^b$ is still conserved. Then the boundary condition above is just the statement that the flow of this current out of the boundary is zero. In the present case, this becomes
+$$
+T_{ww} = T_{\bar w\bar w}, \quad {\rm Re}\, w = 0, \pi\quad \leftrightarrow \quad T_{zz} = T_{\bar z \bar z}, \quad {\rm Im}\, z= 0~.
+$$
+It is convenient to use the **doubling trick**. Define $T_{zz}$ in the lower half $z$-plane as the value of $T_{\bar z \bar z}$ at the image in the upper half plane, $z' = \bar z$:
+$$
+T_{zz}(z) \equiv T_{\bar z\bar z}(\bar z'), \quad {\rm Im}\, z < 0~.
+$$
+The equation of motion and boundary condition are then summarized by the statement that $T_{zz}$ is holomorphic in the whole complex plane. There is only one set of Virasoro generators, because the boundary condition couples $T$ and $\overline T$. Again they satisfy the Virasoro algebra.
