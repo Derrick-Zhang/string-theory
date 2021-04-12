@@ -569,3 +569,87 @@ $$
 T_{zz}(z) \equiv T_{\bar z\bar z}(\bar z'), \quad {\rm Im}\, z < 0~.
 $$
 The equation of motion and boundary condition are then summarized by the statement that $T_{zz}$ is holomorphic in the whole complex plane. There is only one set of Virasoro generators, because the boundary condition couples $T$ and $\overline T$. Again they satisfy the Virasoro algebra.
+
+## Mode expansions
+
+### Free scalars
+
+In the $X^\mu$ theory, $\part X$ and $\bar \part X$ are (anti)holomorphic and so have Laurent expansions like that for $T$,
+$$
+\part X^\mu(z) = -i \sqrt{\frac{\alpha'}{2}} \sum_{m = -\infty}^\infty \frac{\alpha^\mu_m}{z^{m+1}},\quad \bar \part X^\mu(\bar z) = -i\sqrt{\frac{\alpha'}{2}} \sum_{m = -\infty}^\infty \frac{\tilde \alpha^\mu_n}{\bar z^{m+1}}~.
+$$
+Equivalently,
+$$
+\alpha^\mu_m = \sqrt{\frac{2}{\alpha'}} \int \frac{dz}{2\pi} z^m \part X^\mu(z),\quad \tilde \alpha^\mu_m = - \sqrt{\frac{2}{\alpha'}} \int \frac{d\bar z}{2\pi} \bar z^m \bar \part X^\mu(\bar z)~.
+$$
+Single-valuedness of $X^\mu$ implies that $\alpha_0^\mu = \tilde \alpha_0^\mu$. Moreover, the Noether current for spacetime translation is $i \part_a X^\mu/\alpha'$, so the spacetime momentum is
+$$
+p^\mu = \frac{1}{2\pi i} \int_C (dz j^\mu - d\bar z\bar j^\mu) = \sqrt{\frac{2}{\alpha'}}\alpha^\mu_0 = \sqrt{\frac{2}{\alpha'}}\tilde \alpha_0^\mu~.
+$$
+Integrating $\part X$ we get
+$$
+X^\mu(z, \bar z) = x^\mu - i \frac{\alpha'}{2} p^\mu \ln|z|^2 + i \sqrt{\frac{\alpha'}{2}} \sum_{m \neq 0} \frac{1}{m} \left (\frac{\alpha^\mu_m}{z^m} +\frac{\tilde \alpha^\mu_m}{\bar z^m} \right)~.
+$$
+Either from standard canonical commutation, or from the contour argument and the $XX$ OPE, one derives
+$$
+[\alpha^\mu_m, \alpha^\nu_n] = [\tilde \alpha^\mu_m, \tilde \alpha^\nu_n] = m \delta_{m,-n}\eta^{\mu \nu}~, \quad [x^\mu, p^\nu] = i \eta^{\mu \nu}
+$$
+The spectrum is given by starting with a state $|0;k\rang$ that has momentum $k^\mu$ and is annihilated by all of the lowering modes, $\alpha_n^\mu$ for $n>0$, and acting in all possible ways with the raising $(n < 0)$ modes.
+
+---
+
+We can also calculate that 
+$$
+L_m \sim \frac 12 \sum_{n} \eta_{\mu \nu} \alpha^\mu_{m-n} \alpha^\nu_n~.
+$$
+Notice that the energy-momentum tensor is the normal order of the product of $\part X$ so we use the symbol $\sim$. It is not a problem when $m \neq 0$, because in this case $\alpha_{m-n}$ and $\alpha_n$ commute.
+
+For $m = 0$, we introduce a normal ordering constant, $a^X$,
+$$
+L_0 = \frac{\alpha' p^2}{4} + \sum_{n = 1}^\infty (\alpha^\mu_{-n} \alpha_{\mu n}) + a^X~.
+$$
+There are several ways to determine the normal ordering constant. The simplest uses the Virasoro algebra,
+$$
+2L_0 |0; 0\rang = [L_1, L_{-1}]|0;0\rang = 0,
+$$
+adn so
+$$
+a^X = 0~.
+$$
+We use $\vdots \, \vdots$ to denote **creation-annihilation normal ordering**. We will include $p^\mu$ with the lowering operators and $x^\mu$ with the raising operators. In this notation we can write
+$$
+L_m = \frac 12 \sum_n \vdots \, \alpha^\mu_{m-n} \alpha_{\mu n}\,\vdots
+$$
+ In fact, it is the same as the conformal normal ordering.
+
+### $bc$ CFT
+
+The fields $b$ and $c$ have the Laurent expansions
+$$
+b(z) = \sum_m \frac{b_m}{z^{m + \lambda}}, \quad c(z) = \sum_m \frac{c_m}{z^{m+1-\lambda}}~.
+$$
+We will assume that $\lambda$ is an integer. The OPE gives the anticommutators
+$$
+\{b_m, c_n\} = \delta_{m, -n}~.
+$$
+Consider first the states that are annihilated by all of the $n>0$ operators. The $b_0$, $c_0$ oscillator algebra generators two such ground states $|\downarrow\rang$ and $|\uparrow\rang$ with the properties
+$$
+b_0 |\downarrow\rang = 0, \quad b_0 |\uparrow\rang = |\downarrow\rang,\\
+c_0 |\downarrow\rang = |\uparrow\rang,\quad c_0 |\uparrow\rang=0,\\
+b_n |\downarrow\rang = b_n |\uparrow\rang=c_n |\downarrow\rang=c_n |\uparrow\rang = 0~, \quad n>0~.
+$$
+The general state is obtained by acting on these states with the $n < 0$ modes at most once each. It is convenient to group $b_0$ with the lowering operators and $c_0$ with the raising operators, so we will single out $|\downarrow\rang$ as the ghost vacuum $|0\rang$. In string theory we will have a holomorphic $bc$ theory and an antiholomorphic $\tilde b \tilde c$ theory, each with $\lambda = 2$ .
+
+The Virasoro generators are
+$$
+L_m = \sum_{n = -\infty}^\infty (m \lambda - n) :b_n c_{m-n}: + \delta_{m,0} a^g~.
+$$
+The ordering constant can be determined by
+$$
+2L_0 |\downarrow\rang = (L_1 L_{-1} - L_{-1}L_1) |\downarrow\rang = \lambda(1-\lambda) |\downarrow\rang~.
+$$
+Thus $a^g = \frac12 \lambda (1-\lambda)$.
+
+## Vertex operator
+
+Suppose one has a conserved charge $Q$ acting on the state $|\mathscr A\rang$. One can find the corresponding local operator by using the OPE to evaluate the contour integral.
