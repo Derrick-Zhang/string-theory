@@ -160,3 +160,124 @@ In the gauge-fixed form, the essential content of the gauge symmetry is still pr
 
 ## The Weyl anomaly
 
+The anomaly is in the Weyl symmetry, $T^a_{~a}$ vanishes classically, but not in the quantum theory. We need to check if 
+$$
+Z[g^\zeta] = Z[g] ?
+$$
+We will also be interested in path integrals wiith additional insertions,
+$$
+\langle ... \rangle_g \equiv \int [dX\, db\, dc] \exp(-S[X, b,c,g])...~.
+$$
+Then we also require
+$$
+\langle ... \rangle_{g^\zeta}  = \langle ... \rangle_g ~.
+$$
+
+---
+
+The energy-momentum tensor $T^{ab}$ is the infinitesimal variation of the path integral with respect to the metric
+$$
+\delta \langle ... \rangle_g = - \frac{1}{4\pi} \int d^2 \sigma \sqrt{g(\sigma)} \delta g_{ab}(\sigma) \langle T^{ab}(\sigma) ... \rangle_g~.
+$$
+Classically, $T^{ab}$ comes entirely from the variation of the action, and this coincides with the Noether definition
+$$
+T^{ab}(\sigma)  = \frac{4\pi}{\sqrt{g(\sigma)}} \frac{\delta}{\delta g_{ab}(\sigma)}S.
+$$
+For a Weyl transformation, we have
+$$
+\delta_W \langle ... \rangle_g = - \frac{1}{2\pi} \int d^2 \sigma \sqrt{g(\sigma)} \delta \omega(\sigma) \langle T^{a}_{~a}(\sigma) ... \rangle_g~.
+$$
+Classically, $T^a_{~a}$ vanishes, but in the quantum theory,
+$$
+T^a _{~a} = a_1 R
+$$
+
+---
+
+**Calculation of the Weyl anomaly** 
+
+In conformal gauge,
+$$
+T_{z \bar z} = \frac{a_1}{2} g_{z \bar z} R~.
+$$
+Taking the covariant derivative,
+$$
+\nabla^{\bar z} T_{z \bar z} = \frac{a_1}{2} \nabla^{\bar z} (g_{z \bar z} R) = \frac{a_1}{2} \partial_z R~,
+$$
+where we have used the fact that the metric is covariantly constant. Then by conservation of $T_{ab}$,
+$$
+\nabla^z T_{zz} = - \nabla^{\bar z} T_{\bar z z} = - \frac{a_1}{2} \partial_z R~.
+$$
+
+> The Weyl transformation of Ricci scalar is
+> $$
+> \sqrt{g'}R' = \sqrt{g} (R - 2 \nabla^2 \omega)
+> $$
+
+The Weyl transformation of the right is
+$$
+a_1 \partial_z \nabla^2 \delta \omega \approx 4 a_1 \partial_z^2 \partial_{\bar z} \delta \omega~,
+$$
+To get the Weyl transformation of $T_{zz}$ we use first the conformal transformation
+$$
+\epsilon^{-1} \delta T_{zz} (z) = - \frac{c}{12} \partial^3_z v^z(z) - 2 \partial_z v^z(z) T_{zz}(z) - v^z(z) \partial_z T_{zz}(z)~.
+$$
+This confromal tansformation consists of a coordinate transformation $\delta z = \epsilon v$ plus a Weyl transformation $2 \delta \omega = \epsilon \partial v + \epsilon (\partial v)^*$. The last two terms in the variation are the coordinate transformation of the tensor, so the Weyl  transformation, to leading order around flat space, is
+$$
+\delta_W T_{zz} = -\frac{c}{6} \partial_z^2 \delta \omega
+$$
+Acting with $\partial ^z = 2\partial _ {\bar z}$ and compare with above formula, we obtain,
+$$
+c = - 12 a_1, \quad T^{a}_{~a} = -\frac{c}{12}R~.
+$$
+
+## Scattering amplitudes
+
+Each string source becomes a local disturbance on the world-sheet. To a given incoming or outgoing string, with $D$-momentum $k^\mu$ and internal state $j$, there corresponds a local **vertex operator** $\mathscr V_j(k)$. Incoming and outgoing states are distinguished by the sign of $k^0$. An $n$-particle S-matrix element is given by
+$$
+S_{j_1,..., j_n} (k_1, ... , k_n) = \sum \int \frac{[dX\, dg]}{V_{\rm diff \times Weyl}} \exp(-S_X - \lambda\chi) \prod_{i=1}^n \int d^2 \sigma_i \sqrt{g(\sigma_i)} \mathscr V_{j_i}(k_i, \sigma_i)~,
+$$
+where the summation is over compact topologies. To make the vertex operator insertions diff-invariant, we have integrated them over the world-sheet.
+
+Any compact, connected, oriented two-dimensional surface without boundary is topologically equivalent to a sphere with $g$ handles; $g$ is known as the **genus** of the surface. Any compact, connected, oriented two-dimensinal surface is topologically equivalent to a sphere with $g$ handles and $b$ holes.
+
+To describe unoriented surfaces, it is useful to introduce the cross-cap, cut a hole in the surface and identify diametrically opposite points. Any compact, connected closed surface, can be obtained by adding $g$ handles, $b$ holes and $c$ cross-caps to the sphere.
+
+>  Besides cross-caps and handles, we can add cross-handles. These three classes are not independent
+>
+> - A cross-handle is homeomorphic to two cross-caps
+> - Handles and cross-handles are equivalent in the presence of a crosscap
+
+The Euler number is given by
+$$
+\chi = 2- 2g - b-c~.
+$$
+
+## Vertex operators
+
+Using the state-operator mapping, the vertex operator for the closed string tachyon is
+$$
+V_0 = 2 g_c \int d^2 \sigma \sqrt{g} e^{ikX} \to g_c \int d^z :e^{ikX}:
+$$
+The (diff$\times$Weyl)-invariance requires that the operator is a tensor  of weight $(1,1)$. By a straightforward OPE calculation, $e^{ikX}$ is a tensor of weight $h = \bar h = \alpha' k^2/4$, so the condition is
+$$
+m^2 = -k^2 = - \frac{4}{\alpha'}~.
+$$
+Similarly, the tensor states at the first excited level of the closed string have the flat world-sheet vertex operators
+$$
+\frac{2g_c}{\alpha'} \int d^2 z :\partial X^\mu \bar \partial X^\nu e^{ik\cdot X}:
+$$
+
+## Strings in curved spacetime
+
+$$
+S_\sigma = \frac{1}{4\pi \alpha'} \int_M d^2 \sigma \sqrt{g} [(g^{ab} G_{\mu \nu}(X) + i \epsilon^{ab} B_{\mu \nu}(X)) \partial_a X^\mu \partial_b X^\nu + \alpha' R \Phi(X)]~.
+$$
+
+The field $B_{\mu \nu} (X)$ is the antisymmetric tensor, and the dilaton involves both $\Phi$ and the diagonal part of $G_{\mu \nu}$.
+
+One can think of the fields $X^\mu$ as being coordinates on a manifold. This is called the **target space**, because the $X^\mu$ define an embedding,
+$$
+{\rm world~ sheet \to target}
+$$
+A field theory in which the kinetic term is field dependent and so field space is effectively a curved manifold, is known for historic reasons as a **nonlinear sigma model**.
