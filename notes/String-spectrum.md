@@ -1,5 +1,3 @@
-
-
 # The string spectrum
 
 ## BRST quantization
@@ -47,11 +45,9 @@ This transformation mixes commuting and anticommuting objects, so that $\epsilon
 
 - The contribution from $S_3$ are
 
-  - 
-
-  $$
-  (\delta_B b_A) c^\alpha \delta_\alpha F^A(\phi)=\epsilon B_Ac^\alpha \delta_\alpha F^A(\phi)
-  $$
+  - $$
+    (\delta_B b_A) c^\alpha \delta_\alpha F^A(\phi)=\epsilon B_Ac^\alpha \delta_\alpha F^A(\phi)
+    $$
 
   - $$
     b_A (\delta_B c^\alpha) \delta_\alpha F^A(\phi) = \frac i 2 f^\alpha_{~\beta \gamma}b_A \epsilon c^\beta c^\gamma \delta_\alpha F^A(\phi)
@@ -61,8 +57,6 @@ This transformation mixes commuting and anticommuting objects, so that $\epsilon
     b_A c^\alpha \delta_\alpha \delta_B F^A(\phi) = b_A c^\alpha \delta_\alpha \frac{\partial F^A(\phi)}{\partial \phi_i} \delta_B \phi_i = b_A c^\alpha \delta_\alpha \frac{\partial F^A(\phi)}{\partial \phi_i} (-i)\epsilon c^\beta \delta_\beta \phi_i\\ = -i \epsilon b_A c^\gamma c^\beta \frac{\partial F^A(\phi)}{\partial \phi_i}\delta_\gamma \delta_\beta \phi_i
     = - i \epsilon b_A c^\gamma c^\beta \frac{\partial F^A(\phi)}{\partial \phi_i} \frac12 f^\alpha_{\gamma \beta} \delta_\alpha \phi_i
     $$
-
-- 
 
 Another key point here is that
 $$
@@ -111,4 +105,38 @@ $$
 \mathscr H_{\rm BRST} = \mathscr H_{\rm closed} / \mathscr H_{\rm exact}~.
 $$
 
+## BRST quantization of the string
 
+In string theory, the BRST quantization is
+$$
+\delta_B X^\mu = i\epsilon(c \partial + \bar c \bar \partial) X^\mu \\
+\delta_B b = i\epsilon(T^X + T^g), \quad \delta_B \bar b = i\epsilon(\bar T^X + \bar T^g)\\
+\delta_B c = i \epsilon c \partial c, \quad \delta_B \bar c = i \epsilon \bar c \bar \partial \bar c
+$$
+Noether's theorem gives the BRST current
+$$
+j_B = cT^m + \frac12 :cT^g: + \frac32 \partial^2 c = c T^m + :bc\partial c: + \frac32 \partial^2 c
+$$
+The final term in the current is a total derivative and does not contribute to the BRST charge; it has been added by hand to make the BRST current a tensor. It is a total derivative and does not contribute to the BRST charge. The OPEs of the BRST current with the ghost fields and with a general matter tensor field are
+$$
+j_B b(0) \sim \frac{3}{z^3} + \frac{1}{z^2} j^g(0) + \frac1 z T^{m+g}(0)~,
+$$
+
+The BRST operator is
+$$
+Q_B = \frac{1}{2\pi i} \oint (dz j_B - d\bar z \bar j_B)
+$$
+By the usual contour argument, the OPE implies
+$$
+\{Q_B, b_m\} = L_m^m + L_m^g~.
+$$
+In terms of the ghost modes,
+
+$$
+Q_B = \sum_n (c_n L_{-n}^m + \bar c_n \bar L_{-n}^m) + \sum_{m,n} \frac{m-n}{2}:(c_m c_n b_{-m-n}+\bar c_m \bar c_n \bar b_{-m-n}): + a^B (c_0 + \bar c_0)
+$$
+with $a^B = a^g = 1$. Moreover, 
+$$
+j_B(z) j_B(0) \sim - \frac{c^m - 18}{2 z^3} c \partial c(0) - \frac{c^m - 18}{4 z^2}c \partial^2 c(0) - \frac{c^m - 26}{12z} c \partial^3 c(0)~.
+$$
+The single pole implies that $\{Q_B, Q_B\} = 0$ when $c^m = 26$.
